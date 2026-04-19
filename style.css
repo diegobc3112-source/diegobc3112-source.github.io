@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Times New Roman", serif;
+    color: #f5e6c8;
+}
+
+.carta-container {
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.carta {
+    width: 380px;
+    height: 260px;
+    background: #3b2b24;
+    border: 3px solid #c6a87d;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 224, 153, 0.4);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s;
+}
+
+.carta.abierta {
+    transform: rotateX(180deg);
+}
+
+.frente, .dentro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.frente {
+    background: linear-gradient(135deg, #3b2b24, #2a1e19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: #d8c29e;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: 3px solid #c6a87d;
+}
+
+.dentro {
+   
+    background: #f5e6c8;
+    color: #4a372c;
+    padding: 20px;
+    transform: rotateX(180deg);
+    font-size: 18px;
+    border: 3px solid #c6a87d;
+
+    /* Ajustes del contenido */
+    box-sizing: border-box;
+    overflow-y: auto;
+    word-wrap: break-word;
+    max-height: 100%;
+
+    /* Corrección para que NO se coma el título */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* título arriba */
+    align-items: center;         /* centra horizontal */
+    text-align: center;          /* centra el texto */
+    gap: 10px;                   /* espacio bonito entre título y texto */
+}
+
